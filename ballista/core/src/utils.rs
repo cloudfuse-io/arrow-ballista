@@ -407,7 +407,7 @@ where
 {
     let endpoint = tonic::transport::Endpoint::new(dst)?
         .connect_timeout(Duration::from_secs(20))
-        .timeout(Duration::from_secs(20))
+        .timeout(Duration::from_secs(60))
         // Disable Nagle's Algorithm since we don't want packets to wait
         .tcp_nodelay(true)
         .tcp_keepalive(Option::Some(Duration::from_secs(3600)))
